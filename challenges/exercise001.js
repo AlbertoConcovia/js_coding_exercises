@@ -21,7 +21,18 @@ function addVAT(originalPrice, vatRate) {
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  // Add your code here!
+  
+ // test("reduces a price of 100 by 50%")
+ // expect(getSalePrice(100, 50)).toBe(50);
+ // expect(getSalePrice(100, 33.3)).toBe(66.7);
+ // expect(getSalePrice(79.99, 15)).toBe(67.99);
+ // expect(getSalePrice(50, 0)).toBe(50);
+  let amountReduction = (originalPrice*reduction/100);
+  amountReduction = amountReduction.toFixed(2);
+  let salePrice = Number(originalPrice) - Number(amountReduction);
+  
+  console.log(`salePrice : ${salePrice}`)
+  return salePrice;
 }
 
 function getMiddleCharacter(str) {
