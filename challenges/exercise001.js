@@ -6,14 +6,16 @@ function capitalize(word) {
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-    console.log(firstName.substring(0, 1).toUpperCase() + lastName.substring(0, 1).toUpperCase());
-    return `${firstName.substring(0, 1).toUpperCase()}.${lastName.substring(0, 1).toUpperCase()}`;
+     return `${firstName.substring(0, 1).toUpperCase()}.${lastName.substring(0, 1).toUpperCase()}`;
 }
 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  // Add your code here!
+    var vat = (originalPrice*vatRate/100);
+    vat = vat.toFixed(2);
+    var sum = Number(originalPrice) + Number(vat);
+    return sum;
 }
 
 function getSalePrice(originalPrice, reduction) {
