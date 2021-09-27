@@ -21,10 +21,10 @@ function addVAT(originalPrice, vatRate) {
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-   let amountReduction = (originalPrice*reduction/100);
-  amountReduction = amountReduction.toFixed(2);
-  let salePrice = Number(originalPrice) - Number(amountReduction);
-   return salePrice;
+    let amountReduction = (originalPrice*reduction/100);
+    amountReduction = amountReduction.toFixed(2);
+    let salePrice = Number(originalPrice) - Number(amountReduction);
+    return salePrice;
 }
 
 function getMiddleCharacter(str) {
@@ -63,7 +63,14 @@ function countLinuxUsers(users) {
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  // Add your code here!
+  var sumScores = 0
+  scores.forEach ( e =>  sumScores += Number(e) );
+  var meanScore = sumScores / scores.length
+  var remainder = sumScores % scores.length
+  if ( remainder !== 0 ) {
+      meanScore = Number(meanScore.toFixed(2));
+  } 
+  return meanScore;
 }
 
 function simpleFizzBuzz(n) {
