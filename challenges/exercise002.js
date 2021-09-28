@@ -11,7 +11,10 @@ function isFromManchester(person) {
 
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
-  // Your code here!
+  var integerPartNumber = Math.floor(Number(people) / 40);
+  var remainderPart =  Number(people) % 40;
+  if ( remainderPart > 0 ) return integerPartNumber + 1 ;
+  else return integerPartNumber ;
 }
 
 function countSheep(arr) {
