@@ -24,9 +24,9 @@ function camelCaseWords(words) {
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  var totalSubjects = 0
-  people.forEach(e => {
-    totalSubjects += e.subjects.length
+  var totalSubjects = 0;
+  people.forEach((e) => {
+    totalSubjects += e.subjects.length;
   });
   return totalSubjects;
 }
@@ -36,11 +36,11 @@ function checkIngredients(menu, ingredient) {
   if (!ingredient) throw new Error("ingredient is required");
   // iterate for each object
   var foundIt = false;
-  menu.forEach(e => {
+  menu.forEach((e) => {
     // iterate for each element of array
-    e.ingredients.forEach( (value ) => {
-      if ( value == ingredient ) {
-        return foundIt = true;
+    e.ingredients.forEach((value) => {
+      if (value == ingredient) {
+        return (foundIt = true);
       }
     });
   });
@@ -50,7 +50,10 @@ function checkIngredients(menu, ingredient) {
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
-  // Your code here!
+  const intersection = arr1.filter((e) => arr2.includes(e)).sort();
+  const arrayUniqueSet = new Set(intersection);
+  const backToArray = [...arrayUniqueSet];
+  return backToArray;
 }
 
 module.exports = {
