@@ -28,7 +28,11 @@ function countSheep(arr) {
 
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
-  // Your code here!
+    const cityPerson = person.address.city ;
+    const letterPostCode = person.address.postCode.substring(0,1) ;
+    if ( letterPostCode !== 'M' ) return false;
+    else if (cityPerson === 'Manchester') return true;
+    else return false; 
 }
 
 module.exports = {
