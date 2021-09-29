@@ -6,14 +6,25 @@ const findNextNumber = (nums, n) => {
   // increment index by one  and find the new number
   // return the next nummber
   var indexNum = nums.indexOf(n);
-  if (indexNum === -1 || indexNum+1 === nums.length ) return null;
+  if (indexNum === -1 || indexNum + 1 === nums.length) return null;
   const foundNextNum = nums.find((value, index) => index === indexNum + 1);
   return foundNextNum;
 };
 
 const count1sand0s = (str) => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
+  // test "returns an object with the count of 1s and 0s in a string"
+  // match funcion
+  // object
+  const objStrCount = {
+    1: 0,
+    0: 0,
+  };
+  var count1 = (str.match(/1/g) || []).length;
+  var count0 = (str.match(/0/g) || []).length;
+  objStrCount[1] = count1;
+  objStrCount[0] = count0;
+  return objStrCount;
 };
 
 const reverseNumber = (n) => {
