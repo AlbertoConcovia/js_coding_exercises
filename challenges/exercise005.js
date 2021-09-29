@@ -32,13 +32,20 @@ const reverseNumber = (n) => {
   // test("reverses the digits of a number", () => {
   // reverse function
   // return nReverse
-  const nReverse = parseFloat(n.toString().split('').reverse().join(''))  ;
+  const nReverse = parseFloat(n.toString().split("").reverse().join(""));
   return nReverse;
 };
 
 const sumArrays = (arrs) => {
   if (arrs === undefined) throw new Error("arrs is required");
-  // Your code here!
+  // test "returns the total of the numbers in all sub arrays"
+  var sumNumbers = 0;
+  arrs.forEach((e) => {
+    sumNumbers += e.reduce(
+      (previousValue, currentValue) => previousValue + currentValue
+    );
+  });
+  return sumNumbers;
 };
 
 const arrShift = (arr) => {
