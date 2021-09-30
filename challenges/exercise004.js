@@ -14,11 +14,7 @@ function findNamesBeginningWith(names, char) {
   // test "returns an array of names beginning with the specified character"
   // filter function
   const newArrayNames = names.filter(function (item) {
-    if (item.substring(0, 1) === char) {
-      return true;
-    } else {
-      return false;
-    }
+    return (item.substring(0, 1) === char) ;
   });
   return newArrayNames;
 }
@@ -27,13 +23,8 @@ function findVerbs(words) {
   if (!words) throw new Error("words is required");
   //test("returns an array of words that are considered verbs (because they begin with 'to ')"
   // filter function
-  // return the new array
   const newArrayWords = words.filter(function (item) {
-    if (item.substring(0, 3) === "to ") {
-      return true;
-    } else {
-      return false;
-    }
+    return (item.substring(0, 3) === "to ") ;   
   });
   return newArrayWords;
 }
