@@ -3,11 +3,7 @@ function findSmallNums(nums) {
   // test "returns an array of numbers smaller than 1"
   // Filter function
   const newArray = nums.filter(function (item) {
-    if (item < 1) {
-      return true;
-    } else {
-      return false;
-    }
+    return item < 1;
   });
   return newArray;
 }

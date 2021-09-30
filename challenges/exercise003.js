@@ -9,7 +9,6 @@ function getSquares(nums) {
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
   var wordsCamelCase = "";
-  // var wordToUpperCase = "";
   words.forEach((value, index) => {
     if (index === 0) {
       wordsCamelCase += value;
