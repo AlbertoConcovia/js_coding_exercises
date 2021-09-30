@@ -25,10 +25,8 @@ const count1sand0s = (str) => {
 const reverseNumber = (n) => {
   if (n === undefined) throw new Error("n is required");
   // test("reverses the digits of a number", () => {
-  // reverse function
-  // return nReverse
-  const nReverse = parseFloat(n.toString().split("").reverse().join(""));
-  return nReverse;
+  // reverse function andreturn nReverse
+  return parseFloat(n.toString().split("").reverse().join(""));
 };
 
 const sumArrays = (arrs) => {
