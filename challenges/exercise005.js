@@ -3,12 +3,10 @@ const findNextNumber = (nums, n) => {
   if (n === undefined) throw new Error("n is required");
   // test "returns the next number after the given number in the array"
   // find the index of the number in the array
-  // increment index by one  and find the new number
-  // return the next nummber
-  var indexNum = nums.indexOf(n);
+  // then increment index by one  and find the new number
+  let indexNum = nums.indexOf(n);
   if (indexNum === -1 || indexNum + 1 === nums.length) return null;
-  const foundNextNum = nums.find((value, index) => index === indexNum + 1);
-  return foundNextNum;
+  return nums.find((value, index) => index === indexNum + 1);
 };
 
 const count1sand0s = (str) => {
