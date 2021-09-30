@@ -8,7 +8,7 @@ function getSquares(nums) {
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  var wordsCamelCase = "";
+  let wordsCamelCase = "";
   words.forEach((value, index) => {
     if (index === 0) {
       wordsCamelCase += value;
@@ -23,7 +23,7 @@ function camelCaseWords(words) {
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  var totalSubjects = 0;
+  let totalSubjects = 0;
   people.forEach((e) => {
     totalSubjects += e.subjects.length;
   });
@@ -34,7 +34,7 @@ function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
   // iterate for each object
-  var foundIt = false;
+  let foundIt = false;
   menu.forEach((e) => {
     // iterate for each element of array
     e.ingredients.forEach((value) => {
