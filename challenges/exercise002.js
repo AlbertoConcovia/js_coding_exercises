@@ -10,15 +10,15 @@ function isFromManchester(person) {
 
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
-  var integerPartNumber = Math.floor(Number(people) / 40);
-  var remainderPart = Number(people) % 40;
+  let integerPartNumber = Math.floor(Number(people) / 40);
+  let remainderPart = Number(people) % 40;
   if (remainderPart > 0) return integerPartNumber + 1;
   else return integerPartNumber;
 }
 
 function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
-  var numberOfSheep = 0;
+  let numberOfSheep = 0;
   arr.forEach((e) => {
     if (e === "sheep") numberOfSheep += 1;
   });
