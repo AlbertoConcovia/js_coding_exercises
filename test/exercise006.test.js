@@ -2,7 +2,7 @@ const {
   sumMultiples,
   isValidDNA,
   getComplementaryDNA,
-  //   isItPrime,
+  isItPrime,
   //   createMatrix,
   //   areWeCovered,
 } = require("../challenges/exercise006");
@@ -39,5 +39,20 @@ describe("getComplementaryDNA", () => {
   });
   test("return characters no valid", () => {
     expect(getComplementaryDNA("B")).toBe("invalid character");
+  });
+});
+
+describe("isItPrime return true/false depending it is a prime number or not", () => {
+  test("return true if the number is prime", () => {
+    expect(isItPrime(7)).toBe(true);
+    expect(isItPrime(11)).toBe(true);
+  });
+  test("return false if the number is not prime", () => {
+    expect(isItPrime(4)).toBe(false);
+    expect(isItPrime(9)).toBe(false);
+  });
+  test("return false if the number is 1 or 0", () => {
+    expect(isItPrime(0)).toBe(false);
+    expect(isItPrime(1)).toBe(false);
   });
 });
