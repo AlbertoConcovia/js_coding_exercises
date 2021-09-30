@@ -2,7 +2,7 @@
  * This function takes a number, e.g. 123 and returns the sum of all its digits, e.g 6 in this example.
  * @param {Number} n
  */
-const sumDigits = n => {
+const sumDigits = (n) => {
   if (n === undefined) throw new Error("n is required");
   let sum = 0;
   //convert the integer to string
@@ -15,7 +15,9 @@ const sumDigits = n => {
 };
 
 /**
- * This function creates a range of numbers as an array. It received a start, an end and a step. Step is the gap between numbers in the range. For example, if start = 3, end = 11 and step = 2 the resulting range would be: [3, 5, 7, 9, 11]
+ * This function creates a range of numbers as an array. It received a start, an end and a step.
+ * Step is the gap between numbers in the range.
+ * For example, if start = 3, end = 11 and step = 2 the resulting range would be: [3, 5, 7, 9, 11]
  * Both the start and the end numbers are inclusive.
  * Step is an optional parameter. If it is not provided, assume the step is 1.
  * @param {Number} start
@@ -25,6 +27,12 @@ const sumDigits = n => {
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
+  if (step === undefined) step = 1;
+  const arrRange = [];
+  for (let i = start; i <= end; i += step) {
+    arrRange.push(i);
+  }
+  return arrRange;
 };
 
 /**
@@ -71,7 +79,7 @@ const getScreentimeAlertList = (users, date) => {
  * Hint: You will need to convert each hexadecimal value for R, G and B into its decimal equivalent!
  * @param {String} str
  */
-const hexToRGB = hexStr => {
+const hexToRGB = (hexStr) => {
   if (hexStr === undefined) throw new Error("hexStr is required");
 };
 
@@ -85,7 +93,7 @@ const hexToRGB = hexStr => {
  * The function should return "X" if player X has won, "0" if the player 0 has won, and null if there is currently no winner.
  * @param {Array} board
  */
-const findWinner = board => {
+const findWinner = (board) => {
   if (board === undefined) throw new Error("board is required");
 };
 
@@ -94,5 +102,5 @@ module.exports = {
   createRange,
   getScreentimeAlertList,
   hexToRGB,
-  findWinner
+  findWinner,
 };
