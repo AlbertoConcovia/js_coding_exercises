@@ -3,12 +3,12 @@ const {
   isValidDNA,
   getComplementaryDNA,
   isItPrime,
-  //   createMatrix,
+  createMatrix,
   //   areWeCovered,
 } = require("../challenges/exercise006");
 
 describe("sumMultiples", () => {
-  test("returns the sum of any numbers which are a multiple of 3 or 5", () => {
+  test("should it returns the sum of any numbers which are a multiple of 3 or 5", () => {
     expect(sumMultiples([3, 5])).toBe(8);
     expect(sumMultiples([1, 2, 5, 10, 15])).toBe(30);
   });
@@ -54,5 +54,25 @@ describe("isItPrime return true/false depending it is a prime number or not", ()
   test("return false if the number is 1 or 0", () => {
     expect(isItPrime(0)).toBe(false);
     expect(isItPrime(1)).toBe(false);
+  });
+});
+
+describe("createMatrix", () => {
+  test("it should return a matrix of 3", () => {
+    const resultMatrix = [
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+    ];
+    expect(createMatrix(3, "foo")).toStrictEqual(resultMatrix);
+  });
+  test("it should return a matrix of 4", () => {
+    const resultMatrix = [
+      ["foo", "foo", "foo", "foo"],
+      ["foo", "foo", "foo", "foo"],
+      ["foo", "foo", "foo", "foo"],
+      ["foo", "foo", "foo", "foo"],
+    ];
+    expect(createMatrix(4, "foo")).toStrictEqual(resultMatrix);
   });
 });
