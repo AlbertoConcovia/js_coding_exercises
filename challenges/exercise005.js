@@ -13,15 +13,12 @@ const count1sand0s = (str) => {
   if (str === undefined) throw new Error("str is required");
   // test "returns an object with the count of 1s and 0s in a string"
   // match funcion
-  // object
   const objStrCount = {
     1: 0,
     0: 0,
   };
-  var count1 = (str.match(/1/g) || []).length;
-  var count0 = (str.match(/0/g) || []).length;
-  objStrCount[1] = count1;
-  objStrCount[0] = count0;
+  objStrCount[1] = (str.match(/1/g) || []).length;
+  objStrCount[0] = (str.match(/0/g) || []).length;
   return objStrCount;
 };
 
