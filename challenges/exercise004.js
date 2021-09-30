@@ -32,14 +32,9 @@ function findVerbs(words) {
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
   // test "returns an array containing only integers"
-  // filter function
-  // retun new arrayInteger
+  // filter function and retun new arrayInteger
   const arrayIngeter = nums.filter(function (item) {
-    if (Number.isInteger(item) === true) {
-      return true;
-    } else {
-      return false;
-    }
+    return (Number.isInteger(item) === true) ;    
   });
   return arrayIngeter;
 }
