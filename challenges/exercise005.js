@@ -54,7 +54,18 @@ const arrShift = (arr) => {
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  // Your code here!
+  // test "returns true if any of the properties of an object contain the specified string"
+  // for by key and then includes function
+  let found = false;
+  for (let key in haystack) {
+    if (typeof haystack[key] === "string") {
+      if (
+        haystack[key].toUpperCase().includes(searchTerm.toUpperCase()) === true
+      )
+        return (found = true);
+    }
+  }
+  return found;
 };
 
 const getWordFrequencies = (str) => {
