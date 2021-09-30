@@ -4,6 +4,14 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
+  let sum = 0;
+  //convert the integer to string
+  let strNumber = n.toString();
+  // iterate string
+  [...strNumber].forEach((e) => {
+    sum += Number(e);
+  });
+  return sum;
 };
 
 /**
