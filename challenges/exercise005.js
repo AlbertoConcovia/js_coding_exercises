@@ -32,7 +32,7 @@ const reverseNumber = (n) => {
 const sumArrays = (arrs) => {
   if (arrs === undefined) throw new Error("arrs is required");
   // test "returns the total of the numbers in all sub arrays"
-  var sumNumbers = 0;
+  let sumNumbers = 0;
   arrs.forEach((e) => {
     sumNumbers += e.reduce(
       (previousValue, currentValue) => previousValue + currentValue
@@ -70,7 +70,18 @@ const findNeedle = (haystack, searchTerm) => {
 
 const getWordFrequencies = (str) => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
+  // test "returns the frequencies of each word in a string"
+  const arrStr = str.replace(/[!?,]/g, "").toLowerCase().split(" ");
+  const objFreqStr = {};
+  arrStr.forEach ( (e) => {
+    const char = e;
+    if ( objFreqStr[char] === undefined ) {
+      objFreqStr[char] = 1;
+    } else {
+      objFreqStr[char] += 1;
+    }
+  });
+  return objFreqStr;
 };
 
 module.exports = {
