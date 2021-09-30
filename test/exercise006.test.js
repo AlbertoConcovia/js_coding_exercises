@@ -1,7 +1,7 @@
 const {
   sumMultiples,
   isValidDNA,
-  //   getComplementaryDNA,
+  getComplementaryDNA,
   //   isItPrime,
   //   createMatrix,
   //   areWeCovered,
@@ -27,5 +27,17 @@ describe("isValidDNA", () => {
   });
   test("return false - characters B", () => {
     expect(isValidDNA("B")).toBe(false);
+  });
+});
+
+describe("getComplementaryDNA", () => {
+  test("return pairs TGAC - send ACTG", () => {
+    expect(getComplementaryDNA("ACTG")).toBe("TGAC");
+  });
+  test("return pairs A - send T", () => {
+    expect(getComplementaryDNA("A")).toBe("T");
+  });
+  test("return characters no valid", () => {
+    expect(getComplementaryDNA("B")).toBe("invalid character");
   });
 });

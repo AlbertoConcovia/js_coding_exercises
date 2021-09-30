@@ -35,6 +35,44 @@ const isValidDNA = (str) => {
  */
 const getComplementaryDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+  // test "return pairs"
+  // T always pairs with A,
+  // C always pairs with G.
+  let strValid = true;
+  let strPairs = "";
+  const charsValid = "CGTA";
+  const strNoValid = "invalid character";
+
+  // character validation
+  [...str].forEach((e) => {
+    strValid = charsValid.includes(e);
+  });
+
+  // if there are a invalid character send a error message
+  if (strValid === false) {
+    strPairs = strNoValid;
+  } else {
+    // if the character is valid return the pairs
+    [...str].forEach((e) => {
+      switch (e) {
+        case "A":
+          strPairs += "T";
+          break;
+        case "T":
+          strPairs += "A";
+          break;
+        case "C":
+          strPairs += "G";
+          break;
+        case "G":
+          strPairs += "C";
+          break;
+        default:
+          break;
+      }
+    });
+  }
+  return strPairs;
 };
 
 /**
