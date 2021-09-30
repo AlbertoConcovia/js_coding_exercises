@@ -42,8 +42,7 @@ function getIntegers(nums) {
 function getCities(users) {
   if (!users) throw new Error("users is required");
   // test "returns an array of the cities of each user"
-  // map function
-  // return new array newArrayUsers
+  // map function and return new array newArrayUsers
   const newArrayUsers = users.map(function (item) {
     return item.data.city.displayName;
   });
@@ -70,11 +69,7 @@ function findSentencesContaining(sentences, str) {
   //test"returns only the sentences containing the specified string"
   //filter function
   const arraySentence = sentences.filter((e) => {
-    if (e.toUpperCase().search(str.toUpperCase()) >= 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return (e.toUpperCase().search(str.toUpperCase()) >= 0) ;
   });
   return arraySentence;
 }
