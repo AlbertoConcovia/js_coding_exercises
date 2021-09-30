@@ -14,9 +14,9 @@ function generateInitials(firstName, lastName) {
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  var vat = (originalPrice * vatRate) / 100;
+  let vat = (originalPrice * vatRate) / 100;
   vat = vat.toFixed(2);
-  var sum = Number(originalPrice) + Number(vat);
+  let sum = Number(originalPrice) + Number(vat);
   return sum;
 }
 
@@ -55,7 +55,7 @@ function reverseAllWords(words) {
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  var totalUsersLinux = 0;
+  let totalUsersLinux = 0;
   users.forEach((e) => {
     if (e.type === "Linux") totalUsersLinux += 1;
   });
@@ -64,10 +64,10 @@ function countLinuxUsers(users) {
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  var sumScores = 0;
+  let sumScores = 0;
   scores.forEach((e) => (sumScores += Number(e)));
-  var meanScore = sumScores / scores.length;
-  var remainder = sumScores % scores.length;
+  let meanScore = sumScores / scores.length;
+  let remainder = sumScores % scores.length;
   if (remainder !== 0) {
     meanScore = Number(meanScore.toFixed(2));
   }
