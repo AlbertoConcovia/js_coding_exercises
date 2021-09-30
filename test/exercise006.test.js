@@ -4,7 +4,7 @@ const {
   getComplementaryDNA,
   isItPrime,
   createMatrix,
-  //   areWeCovered,
+  areWeCovered,
 } = require("../challenges/exercise006");
 
 describe("sumMultiples", () => {
@@ -74,5 +74,28 @@ describe("createMatrix", () => {
       ["foo", "foo", "foo", "foo"],
     ];
     expect(createMatrix(4, "foo")).toStrictEqual(resultMatrix);
+  });
+});
+
+describe("areWeCovered", () => {
+  test("it should return true, if there are at least 3 staff", () => {
+    const schedule = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "Simon", rota: ["Tuesday", "Wednesday", "Thursday"] },
+      { name: "Anna", rota: ["Monday", "Wednesday", "Friday"] },
+      { name: "Nina", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+    ];
+    expect(areWeCovered(schedule, "Tuesday")).toStrictEqual(true);
+  });
+  test("it should return false, if there are not at least 3 staff", () => {
+    const schedule = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "Simon", rota: ["Tuesday", "Wednesday", "Thursday"] },
+      { name: "Anna", rota: ["Monday", "Wednesday", "Friday"] },
+      { name: "Nina", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+    ];
+    expect(areWeCovered(schedule, "Monday")).toStrictEqual(false);
   });
 });
