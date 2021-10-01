@@ -3,7 +3,7 @@ const {
   createRange,
   getScreentimeAlertList,
   hexToRGB,
-  // findWinner
+  findWinner,
 } = require("../challenges/exercise007");
 
 describe("sumDigits", () => {
@@ -97,5 +97,62 @@ describe("hexToRGB", () => {
     const result = "hexStr is empty";
     const hxStr = "";
     expect(hexToRGB(hxStr)).toStrictEqual(result);
+  });
+});
+
+describe("findWinner", () => {
+  test("should it returns X if player X has won - horizontal first row", () => {
+    const result = "X";
+    const board = [
+      ["X", "X", "X"],
+      ["0", null, "0"],
+      ["X", null, "0"],
+    ];
+    expect(findWinner(board)).toStrictEqual(result);
+  });
+  test("should it returns 0 if player 0 has won - horizontal second row", () => {
+    const result = "0";
+    const board = [
+      ["0", null, "X"],
+      ["0", "0", "0"],
+      ["X", null, "X"],
+    ];
+    expect(findWinner(board)).toStrictEqual(result);
+  });
+  test("should it returns X if player X has won - vertical", () => {
+    const result = "X";
+    const board = [
+      ["X", "0", null],
+      ["X", null, "0"],
+      ["X", null, "0"],
+    ];
+    expect(findWinner(board)).toStrictEqual(result);
+  });
+  test("should it returns X if player X has won - vertical second col", () => {
+    const result = "X";
+    const board = [
+      [null, "X", null],
+      [null, "X", "0"],
+      [null, "X", "0"],
+    ];
+    expect(findWinner(board)).toStrictEqual(result);
+  });
+  test("should it returns 0 if player 0 has won - vertical", () => {
+    const result = "0";
+    const board = [
+      [null, "0", "0"],
+      ["X", null, "0"],
+      ["X", null, "0"],
+    ];
+    expect(findWinner(board)).toStrictEqual(result);
+  });
+  test("should it returns null if no winner", () => {
+    const result = null;
+    const board = [
+      [null, "0", null],
+      ["X", null, "0"],
+      ["X", null, "0"],
+    ];
+    expect(findWinner(board)).toStrictEqual(result);
   });
 });
