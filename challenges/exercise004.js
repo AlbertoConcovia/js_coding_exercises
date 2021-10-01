@@ -14,7 +14,7 @@ function findNamesBeginningWith(names, char) {
   // test "returns an array of names beginning with the specified character"
   // filter function
   const newArrayNames = names.filter(function (item) {
-    return (item.substring(0, 1) === char) ;
+    return item.substring(0, 1) === char;
   });
   return newArrayNames;
 }
@@ -24,7 +24,7 @@ function findVerbs(words) {
   //test("returns an array of words that are considered verbs (because they begin with 'to ')"
   // filter function
   const newArrayWords = words.filter(function (item) {
-    return (item.substring(0, 3) === "to ") ;   
+    return item.substring(0, 3) === "to ";
   });
   return newArrayWords;
 }
@@ -34,7 +34,7 @@ function getIntegers(nums) {
   // test "returns an array containing only integers"
   // filter function and retun new arrayInteger
   const arrayIngeter = nums.filter(function (item) {
-    return (Number.isInteger(item) === true) ;    
+    return Number.isInteger(item) === true;
   });
   return arrayIngeter;
 }
@@ -69,15 +69,14 @@ function findSentencesContaining(sentences, str) {
   //test"returns only the sentences containing the specified string"
   //filter function
   const arraySentence = sentences.filter((e) => {
-    return (e.toUpperCase().search(str.toUpperCase()) >= 0) ;
+    return e.toUpperCase().search(str.toUpperCase()) >= 0;
   });
   return arraySentence;
 }
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  // test "returns the longest side of each set of triangle data"
-  // map function and Math.max function
+  // map function and Math.max function with Spread Syntax
   const arrayLongestSide = triangles.map(function (item) {
     return Math.max(...item);
   });
