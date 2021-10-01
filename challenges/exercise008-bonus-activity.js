@@ -18,7 +18,7 @@ function highestNumber(numbers){
 
 function splitThatString(string){
     if (!string) throw new Error("string is required");
-    // Your solution using the spread operator here!
+    return [...string];
 }
 
 
