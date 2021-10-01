@@ -100,6 +100,22 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = (hexStr) => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+  if (hexStr === "") return "hexStr is empty";
+  let rgbCodeFormat = "";
+  let initPos = 1;
+  let lastPos = 3;
+  const arrColors = [];
+  // I iterate 3 times, one for each color
+  for (let i = 0; i <= 2; i++) {
+    // this function converts to integer
+    arrColors[i] = parseInt(hexStr.substring(initPos, lastPos), 16);
+    initPos += 2;
+    lastPos += 2;
+  }
+  // I give it RGB format
+  rgbCodeFormat =
+    "rgb(" + arrColors[0] + "," + arrColors[1] + "," + arrColors[2] + ")";
+  return rgbCodeFormat;
 };
 
 /**

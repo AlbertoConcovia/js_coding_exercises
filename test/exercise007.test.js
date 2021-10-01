@@ -2,7 +2,7 @@ const {
   sumDigits,
   createRange,
   getScreentimeAlertList,
-  // hexToRGB,
+  hexToRGB,
   // findWinner
 } = require("../challenges/exercise007");
 
@@ -84,5 +84,18 @@ describe("getScreentimeAlertList", () => {
     const result = [];
     const date = "2019-06-11";
     expect(getScreentimeAlertList(users, date)).toStrictEqual(result);
+  });
+});
+
+describe("hexToRGB", () => {
+  test("should it returns RGB code", () => {
+    const result = "rgb(255,17,51)";
+    const hxStr = "#FF1133";
+    expect(hexToRGB(hxStr)).toStrictEqual(result);
+  });
+  test("should it returns RGB code", () => {
+    const result = "hexStr is empty";
+    const hxStr = "";
+    expect(hexToRGB(hxStr)).toStrictEqual(result);
   });
 });
