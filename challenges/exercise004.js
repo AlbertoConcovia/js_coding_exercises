@@ -1,11 +1,7 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
   // test "returns an array of numbers smaller than 1"
-  // Filter function
-  const newArray = nums.filter(function (item) {
-    return item < 1;
-  });
-  return newArray;
+  return nums.filter((item) => item < 1);
 }
 
 function findNamesBeginningWith(names, char) {
