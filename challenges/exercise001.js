@@ -16,7 +16,7 @@ function addVAT(originalPrice, vatRate) {
   if (vatRate === undefined) throw new Error("vatRate is required");
   let vat = (originalPrice * vatRate) / 100;
   vat = vat.toFixed(2);
-  let sum = Number(originalPrice) + Number(vat);
+  const sum = Number(originalPrice) + Number(vat);
   return sum;
 }
 
@@ -25,14 +25,14 @@ function getSalePrice(originalPrice, reduction) {
   if (reduction === undefined) throw new Error("reduction is required");
   let amountReduction = (originalPrice * reduction) / 100;
   amountReduction = amountReduction.toFixed(2);
-  let salePrice = Number(originalPrice) - Number(amountReduction);
+  const salePrice = Number(originalPrice) - Number(amountReduction);
   return salePrice;
 }
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  let lengthMiddleCharacter = Math.floor(str.length / 2);
-  let valueRemainder = str.length % 2;
+  const lengthMiddleCharacter = Math.floor(str.length / 2);
+  const  valueRemainder = str.length % 2;
   if (valueRemainder === 0) {
     return str.substring(lengthMiddleCharacter - 1, lengthMiddleCharacter + 1);
   } else {
@@ -67,7 +67,7 @@ function getMeanScore(scores) {
   let sumScores = 0;
   scores.forEach((e) => (sumScores += Number(e)));
   let meanScore = sumScores / scores.length;
-  let remainder = sumScores % scores.length;
+  const remainder = sumScores % scores.length;
   if (remainder !== 0) {
     meanScore = Number(meanScore.toFixed(2));
   }
