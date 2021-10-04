@@ -45,7 +45,7 @@ const arrShift = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
   // test "returns an array with the first and last items swapped"
   if (arr.length < 2) return arr;
-  let arrLastItem = arr[arr.length - 1];
+  const arrLastItem = arr[arr.length - 1];
   arr[arr.length - 1] = arr[0];
   arr[0] = arrLastItem;
   return arr;
