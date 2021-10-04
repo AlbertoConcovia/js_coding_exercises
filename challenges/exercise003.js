@@ -13,7 +13,7 @@ function camelCaseWords(words) {
     if (index === 0) {
       wordsCamelCase += value;
     } else {
-      let wordToUpperCase =
+      const wordToUpperCase =
         value.substring(0, 1).toUpperCase() + value.substring(1, value.length);
       wordsCamelCase += wordToUpperCase;
     }
