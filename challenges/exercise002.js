@@ -11,7 +11,7 @@ function isFromManchester(person) {
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
   let integerPartNumber = Math.floor(Number(people) / 40);
-  let remainderPart = Number(people) % 40;
+  const remainderPart = Number(people) % 40;
   if (remainderPart > 0) return integerPartNumber + 1;
   else return integerPartNumber;
 }
